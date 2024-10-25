@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import menu from "../images/menu.svg"
-import logo from "../images/logo.png"
 import Form from "./Form";
+
 const NavBar = () => {
-  const [showForm,setShowForm] = useState(false)
+  const [showForm, setShowForm] = useState(false);
 
   return (
     <header>
@@ -11,13 +10,17 @@ const NavBar = () => {
         <a aria-label="Medico" className="nav__brand" href="/">
           <img
             className="nav__logo"
-            src={logo}
+            src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852868/logo_reskbm.png"
             width="20px"
             height="18px"
           />
           Medico
         </a>
-        <img className="icon nav__toggler" src={menu} id="nav-toggler" />
+        <img
+          className="icon nav__toggler"
+          src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852868/menu_bzrjls.svg"
+          id="nav-toggler"
+        />
         <ul className="list nav__list" id="nav-list">
           <li className="nav__item">
             <a href="#">Home</a>
@@ -40,13 +43,16 @@ const NavBar = () => {
           <li className="nav__item">
             <a href="#contact-page">Contact</a>
           </li>
-          <button className="btn" id="appointment-btn" onClick={()=> setShowForm(true)}>
+          <button
+            className="btn"
+            id="appointment-btn"
+            onClick={() => setShowForm(true)}
+          >
             Appointment
           </button>
         </ul>
       </nav>
-      {showForm && <Form setShowForm={setShowForm}/>
-     }
+      {showForm && <Form setShowForm={setShowForm} />}
     </header>
   );
 };

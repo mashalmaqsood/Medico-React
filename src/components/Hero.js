@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="image-text">
           <img
             className="herosection__icon"
-            src={heroIcon}
+            src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852866/heroicon_djp7zo.svg"
             width="20px"
             height="20px"
           />
@@ -16,7 +16,7 @@ const Hero = () => {
         </div>
         <img
           className="herosection__image"
-          src={heroImage}
+          src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852867/heroimage_ltnumo.svg"
           alt="A doctor"
           width="280px"
           height="300px"

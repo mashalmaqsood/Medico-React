@@ -7,33 +7,33 @@ const BenefitsSection = () => {
     <section id="about-us" className="benefits-section">
       <div className="benefits-section__container">
         <div className="benefits-section__image" data-aos="fade-right">
-          <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852586/benefits_gzeiz6.svg" alt="A doctor" />
+          <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852865/benefits_ynafdx.svg" alt="A doctor" />
         </div>
         <div className="benefits-section__content" data-aos="fade-left">
           <h3 className="benefits-section__heading">Why Choose Us?</h3>
           <ul className="benefits-section__list">
             <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src={tick} />
+              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
               Safety First Quality Must
             </li>
             <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src={tick} />
+              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg"/>
               Patient-Centric Approach
             </li>
             <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src={tick} />
+              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
               Focused Leadership
             </li>
             <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src={tick} />
+              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
               Cutting-Edge Technology
             </li>
             <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src={tick} />
+              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
               Transparent Pricing
             </li>
             <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src={tick} />
+              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
               Coordinated Care
             </li>
           </ul>

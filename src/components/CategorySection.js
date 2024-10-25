@@ -20,7 +20,7 @@ const CategorySection = () => {
       <div className="category__container">
         <img
           className="category__image"
-          src={pediatrician}
+          src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852881/pediatrician_tx4lxr.svg"
           alt="Pediatrician"
         />
         <div className="category__info">
@@ -31,7 +31,7 @@ const CategorySection = () => {
       <div className="category__container">
         <img
           className="category__image"
-          src={cardiologist}
+          src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852878/cardiologist_dmuhf9.svg"
           alt="Cardiologist"
         />
         <div className="category__info">
@@ -42,7 +42,7 @@ const CategorySection = () => {
       <div className="category__container">
         <img
           className="category__image"
-          src={dermatologist}
+          src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852875/dermatologist_z1uwxa.svg"
           alt="Dermatologist"
         />
         <div className="category__info">

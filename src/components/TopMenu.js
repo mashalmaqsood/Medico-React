@@ -1,7 +1,4 @@
 import React from "react";
-import locationIcon from "../images/location.svg";
-import emailIcon from "../images/email.svg";
-import whatsappIcon from "../images/whatsapp.svg";
 
 const TopMenu = () => {
   return (
@@ -9,7 +6,7 @@ const TopMenu = () => {
       <div className="topmenu__info">
         <span className="topmenu__location">
           <img
-            src={locationIcon}
+            src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852867/location_hj17gh.svg"
             width="22px"
             height="18px"
             alt="location icon"
@@ -19,7 +16,7 @@ const TopMenu = () => {
         <span className="topmenu__email">
           <img
             className="icon-email"
-            src={emailIcon}
+            src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852864/email_rg2pxi.svg"
             width="22px"
             height="22px"
             alt="email icon"
@@ -29,7 +26,7 @@ const TopMenu = () => {
       </div>
       <span className="topmenu__contact">
         <img
-          src={whatsappIcon}
+          src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/whatsapp_dmlevt.svg"
           width="22px"
           height="18px"
           alt="Whatsapp icon"

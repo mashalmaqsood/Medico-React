@@ -12,7 +12,7 @@ const Testimonials = () => {
         <div className="testimonial__image-container" data-aos="slide-up">
           <img
             id="testimonial-image"
-            src={testimonial}
+            src= "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852871/testimonial_t8x7vc.svg"
             alt="A happy,smiling patient"
             width="400px"
             height="300px"
@@ -22,14 +22,14 @@ const Testimonials = () => {
           <div className="testimonials__quotes">
             <img
               className="testimonials__quotes__image"
-              src={quotes}
+              src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852869/quotes_rudyrt.svg"
               width="50px"
               height="50px"
             />
             <div className="testimonials__rating">
               <img
                 className="testimonials__rating__image"
-                src={rating}
+                src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852869/rating_fsxwcu.svg"
                 width="100px"
               />
             </div>
@@ -50,10 +50,10 @@ const Testimonials = () => {
           </div>
         </div>
         <button className="arrow-btn left-arrow" id="prev-btn">
-          <img src={leftArrow} alt="Previous" />
+          <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852867/leftarrow_h3y35w.svg" alt="Previous" />
         </button>
         <button className="arrow-btn right-arrow" id="next-btn">
-          <img src={rightArrow} alt="Next" />
+          <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852870/rightarrow_kyvc5r.svg" alt="Next" />
         </button>
       </div>
     </section>

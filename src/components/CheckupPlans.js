@@ -30,7 +30,7 @@ const CheckupPlans = () => {
         <div className="checkup-plans__content" data-aos="fade-right">
           <img
             className="checkup-plans__icon"
-            src={checkUpPlans}
+            src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852866/healthcare_b15oaz.svg"
             width="50px"
           />
           <h1 id="checkup-plans__heading2" className="checkup-plans__heading2">
@@ -42,15 +42,15 @@ const CheckupPlans = () => {
           </p>
           <ul className="checkup-plans__list">
             <li id="list-1-text" className="checkup-plans__listitem">
-              <img className="checkup-plans-list__icon" src={tick} />
+              <img className="checkup-plans-list__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
               Complete Blood Count with ESR
             </li>
             <li id="list-2-text" className="checkup-plans__listitem">
-              <img className="checkup-plans-list__icon" src={tick} />
+              <img className="checkup-plans-list__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
               Lipid Profile, Live Profile, kidney Profile
             </li>
             <li id="list-3-text" className="checkup-plans__listitem">
-              <img className="checkup-plans-list__icon" src={tick} />
+              <img className="checkup-plans-list__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg"/>
               USG Abdomen with Pelvis, Mammography
             </li>
           </ul>
@@ -59,7 +59,7 @@ const CheckupPlans = () => {
           </button>
         </div>
         <div className="checkup-plans__image" data-aos="fade-left">
-          <img src={checkup} alt="A doctor" />
+          <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852864/checkup_octlux.svg" alt="A doctor" />
         </div>
       </div>
     </section>

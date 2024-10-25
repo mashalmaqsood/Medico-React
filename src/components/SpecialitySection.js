@@ -19,7 +19,7 @@ const SpecialitySection = () => {
       <div className="grid SpecialityServices__categories" data-aos="fade-right">
         <div className="SpecialityServices__category">
           <div className="grid SpecialityServices__category__container">
-            <img src={mentalService} width="50px" />
+            <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852868/mentalservice_nx0xrw.svg" width="50px" />
             <div className="category__content">
               <h1 className="category__content__heading">Mental Health Service</h1>
               <p className="category__content__text">
@@ -28,11 +28,11 @@ const SpecialitySection = () => {
               </p>
             </div>
           </div>
-          <img className="category__button" src={rightButton} />
+          <img className="category__button" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852870/rightbutton_kupzdn.svg"/>
         </div>
         <div className="SpecialityServices__category">
           <div className="grid SpecialityServices__category__container">
-            <img src={eyeIcon} width="50px" />
+            <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852864/eye_rclzkt.svg" width="50px" />
             <div className="category__content">
               <h1 className="category__content__heading">Eye Diseasses Service</h1>
               <p className="category__content__text">
@@ -41,11 +41,11 @@ const SpecialitySection = () => {
               </p>
             </div>
           </div>
-          <img className="category__button" src={rightButton} />
+          <img className="category__button" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852870/rightbutton_kupzdn.svg"/>
         </div>
         <div className="SpecialityServices__category">
           <div className="grid SpecialityServices__category__container">
-            <img src={vaccinationIcon} width="50px" />
+            <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852871/vaccination_nngqtd.svg" width="50px" />
             <div className="category__content">
               <h1 className="category__content__heading">Vaccination Service</h1>
               <p className="category__content__text">
@@ -54,11 +54,11 @@ const SpecialitySection = () => {
               </p>
             </div>
           </div>
-          <img className="category__button" src={rightButton} />
+          <img className="category__button" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852870/rightbutton_kupzdn.svg" />
         </div>
         <div className="SpecialityServices__category">
           <div className="grid SpecialityServices__category__container">
-            <img src={heartIcon} width="50px" />
+            <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852866/heart_ndhjxx.svg" width="50px" />
             <div className="category__content">
               <h1 className="category__content__heading">Cardiology Service</h1>
               <p className="category__content__text">
@@ -67,7 +67,7 @@ const SpecialitySection = () => {
               </p>
             </div>
           </div>
-          <img className="category__button" src={rightButton} />
+          <img className="category__button" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852870/rightbutton_kupzdn.svg" />
         </div>
       </div>
     </section>

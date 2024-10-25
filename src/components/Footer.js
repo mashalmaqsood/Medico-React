@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="footer-section1__heading">
           <img
             className="footer-section1__icon"
-            src={healthCareIcon}
+            src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852866/healthcare_b15oaz.svg"
             width="20px"
             height="20px"
           />
@@ -23,11 +23,11 @@ const Footer = () => {
         </div>
         <div className="footer__buttton-container">
           <button className="btn--footer">
-            <img src={appointmentIcon} width="12px" />
+            <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852863/appointment_ss1ehz.svg" width="12px" />
             Take An Appointment
           </button>
           <button className="btn--footer">
-            <img src={whatsappIcon} width="12px" />
+            <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/whatsapp_dmlevt.svg" width="12px" />
             Connect on Whatsapp
           </button>
         </div>
@@ -60,23 +60,23 @@ const Footer = () => {
       </ul>
       <div className="footer__icons">
         <a href="https://www.facebook.com/algolix/" target="_blank">
-          <img className="footer__icon" src={facebookIcon} width="20px" />
+          <img className="footer__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852865/facebook_ujspbq.svg" width="20px" />
         </a>
 
         <a href="https://x.com/elonmusk" target="_blank">
-          <img className="footer__icon" src={twitterIcon} width="20px" />
+          <img className="footer__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852871/twitter_xg60p5.svg" width="20px" />
         </a>
         <a
           href="https://www.pinterest.com/pin/633387442784344/"
           target="_blank"
         >
-          <img className="footer__icon" src={pinterestIcon} width="20px" />
+          <img className="footer__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852869/pinterest_twovow.svg" width="20px" />
         </a>
         <a
           href="https://www.instagram.com/explore/locations/106720507792523/algolix-technologies/"
           target="_blank"
         >
-          <img className="footer__icon" src={instagramIcon} width="20px" />
+          <img className="footer__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852867/instagram_ftwd92.svg" width="20px" />
         </a>
       </div>
     </div>

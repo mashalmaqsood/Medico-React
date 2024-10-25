@@ -18,11 +18,11 @@ const Contact = () => {
       </p>
       <div className="contact-container__info">
         <span>
-          <img className="contact-container__image" src={emailIcon} />
+          <img className="contact-container__image" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852864/email_rg2pxi.svg" />
           (123) 456-7890
         </span>
         <span>
-          <img className="contact-container__image" src={phoneIcon} />
+          <img className="contact-container__image" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852869/phone_qlmusf.svg"/>
           medico@health.care
         </span>
       </div>
@@ -40,7 +40,7 @@ const Contact = () => {
       <div className="input-group">
         <input placeholder="Select Appointment Type" className="input" />
         <div className="dropdown-icon">
-          <img src={dropDownIcon}/>
+          <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852864/dropdown_cxlrac.svg"/>
         </div>
       </div>
       <textarea className="input input--message">Message</textarea>
