@@ -1,6 +1,5 @@
 import React from "react";
-import heroIcon from "../images/heroicon.svg"
-import heroImage from "../images/heroimage.svg"
+
 const Hero = () => {
   return (
     <section className="herosection grid">

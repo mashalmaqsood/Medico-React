@@ -1,16 +1,20 @@
 import React from "react";
 
 const Form = ({ setShowForm }) => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Form submitted");
+    setShowForm(false)
+  };
+
   return (
-    <form id="appointment-form" className="form-container">
-      <button id="close-button" onClick={() => setShowForm(false)}>
-        x
-      </button>
+    <form id="appointment-form" onSubmit={handleSubmit}>
       <div className="input-group">
-        <input type="text" placeholder="Name" className="input" />
-        <input type="tel" placeholder="Phone" className="input" />
-        <input type="email" placeholder="Email" className="input" />
-        <select className="input select-input">
+        <input type="text" placeholder="Name" className="input" required />
+        <input type="tel" placeholder="Phone" className="input" required />
+        <input type="email" placeholder="Email" className="input" required />
+        <select className="input select-input" required>
           <option value="" disabled selected>
             Select Appointment Type
           </option>
@@ -18,8 +22,16 @@ const Form = ({ setShowForm }) => {
           <option value="specialist">Specialist Appointment</option>
           <option value="follow-up">Follow-up</option>
         </select>
-        <textarea className="input input--message" placeholder="Message"/>
-        <button id="appointment-btn" className="btn form-btn">
+        <textarea
+          className="input input--message"
+          placeholder="Message"
+          required
+        />
+        <button
+          id="appointment-btn"
+          className="btn form-btn"
+          type="submit"
+        >
           Submit Now
         </button>
       </div>

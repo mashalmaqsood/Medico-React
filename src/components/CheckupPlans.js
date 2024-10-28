@@ -1,9 +1,26 @@
-import React from "react";
-import checkUpPlans from "../images/healthcare.svg"
-import checkup from "../images/checkup.svg"
-import tick from "../images/tick.svg"
+import React, { useState } from "react";
+import { checkupData } from "../lov/data";
+import Form from "./Form";
 
-const CheckupPlans = () => {
+const CheckupPlans = (props) => {
+  const [data, setData] = useState(checkupData[0]);
+  const [selectedPlan, setSelectedPlan] = useState("womenHealth");
+
+  const setWomenHealthData = () => {
+    setData(checkupData[0]);
+    setSelectedPlan("womenHealth");
+  };
+
+  const setCancerScreeningData = () => {
+    setData(checkupData[1]);
+    setSelectedPlan("cancerScreening");
+  };
+
+  const setKidsVaccinesData = () => {
+    setData(checkupData[2]);
+    setSelectedPlan("kidsVaccinnes");
+  };
+
   return (
     <section id="checkup-plans" className="checkup-plans">
       <header>
@@ -14,13 +31,28 @@ const CheckupPlans = () => {
             Semantics, a large language ocean named flows.
           </p>
           <div className="checkup-plans__categories">
-            <button id="women-health-btn" className="btn">
+            <button
+              className={`btn ${
+                selectedPlan === "womenHealth" ? "btn--green" : "btn--white"
+              }`}
+              onClick={setWomenHealthData}
+            >
               Women Health
             </button>
-            <button id="cancer-screening-btn" className="btn btn--white">
+            <button
+              className={`btn ${
+                selectedPlan === "cancerScreening" ? "btn--green" : "btn--white"
+              }`}
+              onClick={setCancerScreeningData}
+            >
               Cancer Screening
             </button>
-            <button id="kids-vaccine-btn" className="btn btn--white">
+            <button
+              className={`btn ${
+                selectedPlan === "kidsVaccinnes" ? "btn--green" : "btn--white"
+              }`}
+              onClick={setKidsVaccinesData}
+            >
               Kids Vaccines
             </button>
           </div>
@@ -34,34 +66,44 @@ const CheckupPlans = () => {
             width="50px"
           />
           <h1 id="checkup-plans__heading2" className="checkup-plans__heading2">
-            Women Health Checkup
+            {data?.heading}
           </h1>
           <p id="checkup-plans__text2" className="checkup-plans__text2">
-            A wonderful serenity has taken possession of my entire soul, <br />
-            like these sweet mornings of spring.
+            {data?.description}
           </p>
           <ul className="checkup-plans__list">
-            <li id="list-1-text" className="checkup-plans__listitem">
-              <img className="checkup-plans-list__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
-              Complete Blood Count with ESR
-            </li>
-            <li id="list-2-text" className="checkup-plans__listitem">
-              <img className="checkup-plans-list__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
-              Lipid Profile, Live Profile, kidney Profile
-            </li>
-            <li id="list-3-text" className="checkup-plans__listitem">
-              <img className="checkup-plans-list__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg"/>
-              USG Abdomen with Pelvis, Mammography
-            </li>
+            {Object.values(data.ul).map((listItem, index) => (
+              <li className="checkup-plans__listitem">
+                <img
+                  className="checkup-plans-list__icon"
+                  src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg"
+                />
+                {listItem}
+              </li>
+            ))}
           </ul>
-          <button className="btn benefits-section__button">
+          <button className="btn benefits-section__button" onClick={props.openForm}>
             Take An Appointment
           </button>
         </div>
         <div className="checkup-plans__image" data-aos="fade-left">
-          <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852864/checkup_octlux.svg" alt="A doctor" />
+          <img
+            src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852864/checkup_octlux.svg"
+            alt="A doctor"
+          />
         </div>
       </div>
+      {props.showForm && (
+        <>
+          <div className="overlay" ></div>
+          <div className="form-container">
+            <button id="close-button" onClick={props.closeForm}>
+              x
+            </button>
+            <Form setShowForm={props.setShowForm}/>
+          </div>
+        </>
+      )}
     </section>
   );
 };

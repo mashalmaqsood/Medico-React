@@ -1,8 +1,9 @@
-import React from "react";
-import benefits from "../images/benefits.svg"
-import tick from "../images/tick.svg"
+import React, { useState } from "react";
+import { benefits } from "../lov/data";
+import Form from "./Form";
 
-const BenefitsSection = () => {
+const BenefitsSection = (props) => {
+
   return (
     <section id="about-us" className="benefits-section">
       <div className="benefits-section__container">
@@ -12,30 +13,12 @@ const BenefitsSection = () => {
         <div className="benefits-section__content" data-aos="fade-left">
           <h3 className="benefits-section__heading">Why Choose Us?</h3>
           <ul className="benefits-section__list">
-            <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
-              Safety First Quality Must
-            </li>
-            <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg"/>
-              Patient-Centric Approach
-            </li>
-            <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
-              Focused Leadership
-            </li>
-            <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
-              Cutting-Edge Technology
-            </li>
-            <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
-              Transparent Pricing
-            </li>
-            <li className="benefits-section__listitem">
-              <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
-              Coordinated Care
-            </li>
+            {benefits.map((benefit,index)=> (
+                <li className="benefits-section__listitem" key={index}>
+                <img className="benefits-section__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg" />
+                 {benefit}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -46,10 +29,21 @@ const BenefitsSection = () => {
           large language ocean. A <br />
           small river named Duden flows by their place and supplies it.
         </p>
-        <button className="btn benefits-section__button">
+        <button className="btn benefits-section__button" onClick={props.openForm} >
           Take An Appointment
         </button>
       </div>
+      {props.showForm && (
+        <>
+          <div className="overlay"></div>
+          <div className="form-container">
+            <button id="close-button" onClick={props.closeForm}>
+              x
+            </button>
+            <Form setShowForm={props.setShowForm}/>
+          </div>
+        </>
+      )}
     </section>
   );
 };

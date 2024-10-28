@@ -1,18 +1,30 @@
-import React from "react";
-import testimonial from "../images/testimonial.svg"
-import quotes from "../images/quotes.svg"
-import rating from "../images/rating.svg"
-import rightArrow from "../images/rightarrow.svg"
-import leftArrow from "../images/leftarrow.svg"
+import React, { useState } from "react";
+import { testimonials } from "../lov/data";
 
 const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const updateTestimonial = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const handlePrevClick = () => {
+    const newIndex =
+      (currentIndex - 1 + testimonials.length) % testimonials.length;
+    updateTestimonial(newIndex);
+  };
+
+  const handleNextClick = () => {
+    const newIndex = (currentIndex + 1) % testimonials.length;
+    updateTestimonial(newIndex);
+  };
+
   return (
     <section id="health-care">
       <div className="grid testimonials">
         <div className="testimonial__image-container" data-aos="slide-up">
           <img
-            id="testimonial-image"
-            src= "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852871/testimonial_t8x7vc.svg"
+            src={testimonials[currentIndex].image}
             alt="A happy,smiling patient"
             width="400px"
             height="300px"
@@ -35,25 +47,32 @@ const Testimonials = () => {
             </div>
           </div>
           <span className="testimonials__heading">
-            <h3 id="testimonial-quote" className="testimonial__container__text">
-              “A wonderful serenity has taken possession of my entire soul, like
-              these sweet mornings of spring which I enjoy”.
+            <h3 className="testimonial__container__text">
+              {testimonials[currentIndex].quote}
             </h3>
           </span>
           <div className="testimonials__patientinfo">
-            <p className="patientinfo__name" id="patient-name">
-              Mr. Williams
+            <p className="patientinfo__name">
+              {testimonials[currentIndex].name}
             </p>
-            <p className="patientinfo__type" id="patient-type">
-              Diabetes Patient
+            <p className="patientinfo__type">
+              {testimonials[currentIndex].type}
             </p>
           </div>
         </div>
-        <button className="arrow-btn left-arrow" id="prev-btn">
-          <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852867/leftarrow_h3y35w.svg" alt="Previous" />
+        <button className="arrow-btn left-arrow">
+          <img
+            src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852867/leftarrow_h3y35w.svg"
+            alt="Previous"
+            onClick={handlePrevClick}
+          />
         </button>
-        <button className="arrow-btn right-arrow" id="next-btn">
-          <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852870/rightarrow_kyvc5r.svg" alt="Next" />
+        <button className="arrow-btn right-arrow">
+          <img
+            src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852870/rightarrow_kyvc5r.svg"
+            alt="Next"
+            onClick={handleNextClick}
+          />
         </button>
       </div>
     </section>

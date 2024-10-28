@@ -1,13 +1,15 @@
-import React from 'react'
-import healthCareIcon from "../images/healthcare.svg"
-import appointmentIcon from "../images/appointment.svg"
-import whatsappIcon from "../images/whatsapp.svg"
-import facebookIcon from "../images/facebook.svg"
-import twitterIcon from "../images/twitter.svg"
-import pinterestIcon from "../images/pinterest.svg"
-import instagramIcon from "../images/instagram.svg"
+import React,{useState} from 'react'
+import Form from './Form';
 
 const Footer = () => {
+
+  const [showForm,setShowForm] = useState(false)
+
+  const closeForm = () => {
+    document.body.classList.remove("no-scroll");
+    setShowForm(false);
+  };
+
   return (
     <footer className="footer">
     <div className="container footer-sections">
@@ -22,7 +24,7 @@ const Footer = () => {
           <span>Medico</span>
         </div>
         <div className="footer__buttton-container">
-          <button className="btn--footer">
+          <button className="btn--footer" onClick={()=> setShowForm(true)} >
             <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852863/appointment_ss1ehz.svg" width="12px" />
             Take An Appointment
           </button>
@@ -80,6 +82,17 @@ const Footer = () => {
         </a>
       </div>
     </div>
+    {showForm && (
+        <>
+          <div className="overlay" ></div>
+          <div className="form-container">
+            <button id="close-button" onClick={closeForm}>
+              x
+            </button>
+            <Form setShowForm={setShowForm}/>
+          </div>
+        </>
+      )}
   </footer>
   )
 }

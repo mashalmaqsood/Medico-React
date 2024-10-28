@@ -12,21 +12,21 @@ code {
     monospace;
 }
 
-/* @font-face {
+@font-face {
   font-family: "Satoshi";
-  src: url("../fonts/satoshi/Satoshi-Regular.woff2") format("woff2"),
-    url("../fonts/satoshi/Satoshi-Regular.woff") format("woff");
+  src: url("fonts/satoshi/Satoshi-Regular.woff2") format("woff2"),
+    url("fonts/satoshi/Satoshi-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Satoshi";
-  src: url("../fonts/satoshi/Satoshi-Bold.woff2") format("woff2"),
-    url("../fonts/satoshi/Satoshi-Bold.woff") format("woff");
+  src: url("fonts/satoshi/Satoshi-Bold.woff2") format("woff2"),
+    url("fonts/satoshi/Satoshi-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
-} */
+}
 
 body {
   background: var(--color-body);
@@ -225,6 +225,12 @@ a {
   background: var(--color-white);
   color: var(--color-black);
 }
+
+.btn--green {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
 
 /* Hero section  */
 .herosection {
@@ -540,6 +546,7 @@ a {
 
 /* benefits-section  */
 .benefits-section {
+  position: relative;
   padding: 2rem;
   margin-left: 2rem;
 }
@@ -629,6 +636,7 @@ a {
 
 /* checkup-plans */
 .checkup-plans {
+  position: relative;
   margin-left: 2rem;
   margin-top: 4rem;
 }
@@ -805,13 +813,17 @@ a {
 
 /* Form  */
 .input-group {
-  margin: 1rem;
+  /* margin: 1rem; */
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+::placeholder{
+  color: #cdcbd7;
+ }
+ 
 .input {
   padding: 1rem;
   font-weight: 500;
@@ -822,13 +834,16 @@ a {
   border-radius: 10px;
   padding-right: 30px;
   margin-top: 1rem;
+  color: var(--color-black);
 }
+
 .input--message {
   width: 232px;
   height: 160px;
   /* margin-left: 14px; */
-  color: #cdcbd7;
+  color: var(--color-black);
 }
+
 
 .dropdown-icon {
   position: absolute;
@@ -843,10 +858,6 @@ a {
   border-radius: 5px;
   margin-left: 1rem;
   font-size: 16px;
-}
-
-::placeholder {
-  color: #cdcbd7;
 }
 
 @media screen and (min-width: 768px) {
@@ -982,6 +993,7 @@ a {
 
 /* footer  */
 .footer {
+  position: relative;
   background: var(--color-primary);
   margin-top: 4rem;
 }
@@ -1075,35 +1087,36 @@ a {
 .form-container {
   background: var(--color-white);
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #ccc;
   width: 300px;
   position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-.showen {
-  display: block;
+  transform: translate(-50%, -50%);
+  z-index: 20; 
 }
 
 #appointment-btn {
   color: var(--color-white);
-  border: none;
   padding: 10px 20px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.select-input {
+  width: 280px;
+  color: #cdcbd7;
 }
 
 #close-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
   background: var(--color-primary);
   border: none;
   color: var(--color-white);
   cursor: pointer;
   font-size: 16px;
   margin-bottom: 10px;
+  margin-left: 270px;
   margin-right: 12px;
 }
 
@@ -1111,9 +1124,25 @@ a {
   .form-container {
     width: 360px;
   }
+  .select-input {
+    width: 330px;
+  }
+  #close-button{
+    margin-left: 325px;
+  }
 }
 
-.select-input {
-  width: 330px;
-  color: #cdcbd7;
+.no-scroll {
+  overflow: hidden;
 }
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+

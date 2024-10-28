@@ -1,7 +1,5 @@
 import React from 'react'
-import dropDownIcon from "../images/dropdown.svg"
-import emailIcon from "../images/email.svg"
-import phoneIcon from "../images/phone.svg"
+import Form from './Form'
 
 const Contact = () => {
   return (
@@ -28,24 +26,8 @@ const Contact = () => {
       </div>
     </div>
     <div className="contact-container__form" data-aos="fade-left">
-      <div className="input-group">
-        <input type="text" placeholder="Name" className="input" />
+      <Form/>
       </div>
-      <div className="input-group">
-        <input type="text" placeholder="Phone" className="input" />
-      </div>
-      <div className="input-group">
-        <input type="text" placeholder="Email" className="input" />
-      </div>
-      <div className="input-group">
-        <input placeholder="Select Appointment Type" className="input" />
-        <div className="dropdown-icon">
-          <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852864/dropdown_cxlrac.svg"/>
-        </div>
-      </div>
-      <textarea className="input input--message">Message</textarea>
-      <button className="btn form-btn">Submit Now</button>
-    </div>
   </section>
   )
 }
