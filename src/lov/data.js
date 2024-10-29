@@ -64,3 +64,22 @@ export const benefits = [
   "Transparent Pricing",
   "Coordinated Care",
 ];
+
+export const links = [
+  {
+    href: "https://www.facebook.com/algolix/",
+    src : "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852865/facebook_ujspbq.svg" 
+  },
+  {
+    href: "https://x.com/elonmusk",
+    src : "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852871/twitter_xg60p5.svg" 
+  },
+  {
+    href: "https://www.pinterest.com/pin/633387442784344/",
+    src : "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852869/pinterest_twovow.svg" 
+  },
+  {
+    href: "https://www.instagram.com/explore/locations/106720507792523/algolix-technologies/",
+    src : "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852867/instagram_ftwd92.svg" 
+  }
+]

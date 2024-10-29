@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { benefits } from "../lov/data";
 import Form from "./Form";
 
-const BenefitsSection = (props) => {
+const BenefitsSection = ({handleForm}) => {
+
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const toggleForm = (formOpen) =>{
+    setIsFormOpen(formOpen);
+    handleForm(formOpen);
+  }
 
   return (
     <section id="about-us" className="benefits-section">
@@ -29,18 +36,19 @@ const BenefitsSection = (props) => {
           large language ocean. A <br />
           small river named Duden flows by their place and supplies it.
         </p>
-        <button className="btn benefits-section__button" onClick={props.openForm} >
+        <button className="btn benefits-section__button" onClick={()=> toggleForm(true)} >
           Take An Appointment
         </button>
       </div>
-      {props.showForm && (
+
+      {isFormOpen && (
         <>
           <div className="overlay"></div>
           <div className="form-container">
-            <button id="close-button" onClick={props.closeForm}>
+            <button id="close-button" onClick={()=> toggleForm(false)}>
               x
             </button>
-            <Form setShowForm={props.setShowForm}/>
+            <Form setIsFormOpen={setIsFormOpen}/>
           </div>
         </>
       )}
@@ -49,3 +57,4 @@ const BenefitsSection = (props) => {
 };
 
 export default BenefitsSection;
+

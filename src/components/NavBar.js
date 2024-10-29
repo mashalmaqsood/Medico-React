@@ -3,9 +3,15 @@ import Form from "./Form";
 
 const NavBar = (props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
   const toggleMenu = () =>{
    setIsMenuOpen((prev) => !prev)
+  }
+
+  const toggleForm = (formOpen) =>{
+    setIsFormOpen(formOpen);
+    props.handleForm(formOpen);
   }
 
   return (
@@ -48,19 +54,19 @@ const NavBar = (props) => {
           <li className="nav__item">
             <a href="#contact-page">Contact</a>
           </li>
-          <button className="btn" id="appointment-btn" onClick={props.openForm}>
+          <button className="btn" id="appointment-btn" onClick={()=>toggleForm(true)}>
             Appointment
           </button>
         </ul>
       </nav>
-      {props.showForm && (
+      {isFormOpen && (
         <>
           <div className="overlay" ></div>
           <div className="form-container">
-            <button id="close-button" onClick={props.closeForm}>
+            <button id="close-button" onClick={()=>toggleForm(false)}>
               x
             </button>
-            <Form setShowForm={props.setShowForm}/>
+            <Form setIsFormOpen={setIsFormOpen}/>
           </div>
         </>
       )}

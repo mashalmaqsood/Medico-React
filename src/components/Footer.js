@@ -1,14 +1,14 @@
 import React,{useState} from 'react'
 import Form from './Form';
+import { links } from '../lov/data';
 
-const Footer = () => {
-
-  const [showForm,setShowForm] = useState(false)
-
-  const closeForm = () => {
-    document.body.classList.remove("no-scroll");
-    setShowForm(false);
-  };
+const Footer = ({handleForm}) => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+ 
+  const toggleForm = (formOpen) =>{
+    setIsFormOpen(formOpen);
+    handleForm(formOpen);
+  }
 
   return (
     <footer className="footer">
@@ -24,7 +24,7 @@ const Footer = () => {
           <span>Medico</span>
         </div>
         <div className="footer__buttton-container">
-          <button className="btn--footer" onClick={()=> setShowForm(true)} >
+          <button className="btn--footer" onClick={()=>toggleForm(true)} >
             <img src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852863/appointment_ss1ehz.svg" width="12px" />
             Take An Appointment
           </button>
@@ -61,35 +61,21 @@ const Footer = () => {
         <li className="footer__section__listitem">Changelog</li>
       </ul>
       <div className="footer__icons">
-        <a href="https://www.facebook.com/algolix/" target="_blank">
-          <img className="footer__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852865/facebook_ujspbq.svg" width="20px" />
-        </a>
-
-        <a href="https://x.com/elonmusk" target="_blank">
-          <img className="footer__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852871/twitter_xg60p5.svg" width="20px" />
-        </a>
-        <a
-          href="https://www.pinterest.com/pin/633387442784344/"
-          target="_blank"
-        >
-          <img className="footer__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852869/pinterest_twovow.svg" width="20px" />
-        </a>
-        <a
-          href="https://www.instagram.com/explore/locations/106720507792523/algolix-technologies/"
-          target="_blank"
-        >
-          <img className="footer__icon" src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852867/instagram_ftwd92.svg" width="20px" />
-        </a>
+        {links.map((link, index) => (
+            <a href={link.href} target="_blank" key={index}>
+            <img className="footer__icon" src={link.src} width="20px" />
+          </a>
+        ))}
       </div>
     </div>
-    {showForm && (
+    {isFormOpen && (
         <>
           <div className="overlay" ></div>
           <div className="form-container">
-            <button id="close-button" onClick={closeForm}>
+            <button id="close-button" onClick={()=>toggleForm(false)}>
               x
             </button>
-            <Form setShowForm={setShowForm}/>
+            <Form setIsFormOpen={setIsFormOpen}/>
           </div>
         </>
       )}

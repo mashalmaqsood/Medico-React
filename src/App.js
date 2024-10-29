@@ -12,32 +12,29 @@ import Testimonials from "./components/Testimonials";
 import TopMenu from "./components/TopMenu";
 
 function App() {
-  const [showForm, setShowForm] = useState(false);
 
-  const openForm = () => {
-    document.body.classList.add("no-scroll");
-    setShowForm(true);
-  };
-
-  const closeForm = () => {
-    document.body.classList.remove("no-scroll");
-    setShowForm(false);
-  };
+  const handleForm = (value) => {
+    if(value){
+      document.body.classList.add("no-scroll");
+    }else{
+      document.body.classList.remove("no-scroll");
+    }
+  }
 
   return (
     <>
       <TopMenu />
-      <NavBar openForm={openForm} closeForm={closeForm} showForm={showForm}/>
+      <NavBar handleForm={handleForm}/>
       <Hero />
       <CategorySection />
       <SpecialitySection/>
-      <BenefitsSection openForm={openForm} closeForm={closeForm} showForm={showForm} />
-      <CheckupPlans openForm={openForm} closeForm={closeForm} showForm={showForm}/>
+      <BenefitsSection handleForm={handleForm}/>
+      <CheckupPlans handleForm={handleForm}/>
       <Testimonials />
       <Contact />
-      <Footer openForm={openForm} closeForm={closeForm} showForm={showForm}/>
+      <Footer handleForm={handleForm}/>
     </>
-  );
+  )
 }
 
 export default App;

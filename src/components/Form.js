@@ -1,11 +1,11 @@
 import React from "react";
 
-const Form = ({ setShowForm }) => {
+const Form = ({setIsFormOpen }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Form submitted");
-    setShowForm(false)
+    setIsFormOpen(false)
   };
 
   return (

@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { checkupData } from "../lov/data";
 import Form from "./Form";
 
-const CheckupPlans = (props) => {
+const CheckupPlans = ({handleForm}) => {
   const [data, setData] = useState(checkupData[0]);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("womenHealth");
-
+  
   const setWomenHealthData = () => {
     setData(checkupData[0]);
     setSelectedPlan("womenHealth");
@@ -20,6 +21,11 @@ const CheckupPlans = (props) => {
     setData(checkupData[2]);
     setSelectedPlan("kidsVaccinnes");
   };
+  
+  const toggleForm = (formOpen) =>{
+    setIsFormOpen(formOpen);
+    handleForm(formOpen);
+  }
 
   return (
     <section id="checkup-plans" className="checkup-plans">
@@ -82,7 +88,7 @@ const CheckupPlans = (props) => {
               </li>
             ))}
           </ul>
-          <button className="btn benefits-section__button" onClick={props.openForm}>
+          <button className="btn benefits-section__button" onClick={()=>toggleForm(true)}>
             Take An Appointment
           </button>
         </div>
@@ -93,14 +99,14 @@ const CheckupPlans = (props) => {
           />
         </div>
       </div>
-      {props.showForm && (
+      {isFormOpen && (
         <>
           <div className="overlay" ></div>
           <div className="form-container">
-            <button id="close-button" onClick={props.closeForm}>
+            <button id="close-button" onClick={()=>toggleForm(false)}>
               x
             </button>
-            <Form setShowForm={props.setShowForm}/>
+            <Form setIsFormOpen={setIsFormOpen}/>
           </div>
         </>
       )}
@@ -109,3 +115,4 @@ const CheckupPlans = (props) => {
 };
 
 export default CheckupPlans;
+
