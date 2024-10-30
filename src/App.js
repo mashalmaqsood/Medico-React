@@ -1,17 +1,22 @@
-import "./App.css";
-import { useState } from "react";
-import BenefitsSection from "./components/BenefitsSection";
-import CategorySection from "./components/CategorySection";
-import CheckupPlans from "./components/CheckupPlans";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import NavBar from "./components/NavBar";
-import SpecialitySection from "./components/SpecialitySection";
-import Testimonials from "./components/Testimonials";
-import TopMenu from "./components/TopMenu";
+import { useEffect } from "react";
+import BenefitsSection from "./components/benefitsection/BenefitsSection";
+import CategorySection from "./components/categorysection/CategorySection";
+import CheckupPlans from "./components/checkup-plans/CheckupPlans";
+import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
+import Hero from "./components/herosection/Hero";
+import NavBar from "./components/navbar/NavBar";
+import SpecialitySection from "./components/specialitysection/SpecialitySection";
+import Testimonials from "./components/testimonials/Testimonials";
+import TopMenu from "./components/topmenu/TopMenu";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   const handleForm = (value) => {
     if(value){
@@ -22,7 +27,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="overflow-hidden">
       <TopMenu />
       <NavBar handleForm={handleForm}/>
       <Hero />
@@ -33,7 +38,7 @@ function App() {
       <Testimonials />
       <Contact />
       <Footer handleForm={handleForm}/>
-    </>
+    </div>
   )
 }
 

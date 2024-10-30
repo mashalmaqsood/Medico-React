@@ -68,18 +68,87 @@ export const benefits = [
 export const links = [
   {
     href: "https://www.facebook.com/algolix/",
-    src : "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852865/facebook_ujspbq.svg" 
+    src: "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852865/facebook_ujspbq.svg",
   },
   {
     href: "https://x.com/elonmusk",
-    src : "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852871/twitter_xg60p5.svg" 
+    src: "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852871/twitter_xg60p5.svg",
   },
   {
     href: "https://www.pinterest.com/pin/633387442784344/",
-    src : "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852869/pinterest_twovow.svg" 
+    src: "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852869/pinterest_twovow.svg",
   },
   {
     href: "https://www.instagram.com/explore/locations/106720507792523/algolix-technologies/",
-    src : "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852867/instagram_ftwd92.svg" 
-  }
-]
+    src: "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852867/instagram_ftwd92.svg",
+  },
+];
+
+export const specialities = [
+  {
+    image:
+      "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852868/mentalservice_nx0xrw.svg",
+    heading: "Mental Health Service",
+    text: "The service provides immediate medical care to patients with acute illnesses or injuries that require immediate attention",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852864/eye_rclzkt.svg",
+    heading: "Eye Diseasses Service",
+    text: "The service provides immediate medical care to patients with acute illnesses or injuries that require immediate attention",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852871/vaccination_nngqtd.svg",
+    heading: "Vaccination Service",
+    text: "The service provides immediate medical care to patients with acute illnesses or injuries that require immediate attention",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852866/heart_ndhjxx.svg",
+    heading: "Cardiology Service",
+    text: "The service provides immediate medical care to patients with acute illnesses or injuries that require immediate attention",
+  },
+];
+
+export const categories = [
+  {
+    image:
+      "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852881/pediatrician_tx4lxr.svg",
+    alt: "Pediatrician",
+    text: "For your health",
+    heading: "Pediatrician",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852878/cardiologist_dmuhf9.svg",
+    alt: "Cardiologist",
+    text: "For your health",
+    heading: "Cardiologist",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852875/dermatologist_z1uwxa.svg",
+    alt: "Dermatologist",
+    text: "For your health",
+    heading: "Dermatologist",
+  },
+];
+
+export const listItemsOne = ["Pathology", "Ambulance", "Radiology", "Pharmacy"];
+
+export const listItemsTwo = [
+  "Woman Health",
+  "Cancer Screening",
+  "Cardiac Health",
+  "MRI Checkup",
+];
+
+export const listItemsThree = [
+  "General",
+  "Dermatology",
+  "Cardiology",
+  "Cancer",
+];
+
+export const listItemsFour = ["License", "Changelog"];

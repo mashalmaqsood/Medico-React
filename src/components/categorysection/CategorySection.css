@@ -1,0 +1,110 @@
+.catgory-container {
+    padding: 0 3rem;
+    margin-left: 1rem;
+    margin-top: 3rem;
+  }
+  
+  .categoryservices {
+    display: grid;
+    gap: 5.8rem;
+  }
+  
+  .catgory-container__heading {
+    margin: 0;
+    font-weight: 700;
+    font-size: 34px;
+  }
+  
+  .catgory-container__text {
+    font-weight: 500;
+    font-size: 15px;
+    text-align: justify;
+  }
+  
+  .category__container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .category__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 170px;
+    height: 94px;
+    background: var(--color-primary);
+    position: absolute;
+    top: 134px;
+    border-radius: 10px;
+    left: 23px;
+    padding: 0 10px;
+    color: var(--color-white);
+  }
+  
+  .category__info__text {
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  .category__info__heading {
+    margin: 0;
+    font-size: 25px;
+  }
+  
+  .category__image {
+    width: 246px;
+  }
+  
+  @media screen and (max-width: 320px) {
+    .category__content__heading {
+      font-size: 17px;
+    }
+    .category__content__text {
+      font-size: 14px;
+    }
+    .catgory-container {
+      margin-left: 0;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .catgory-container {
+      padding: 2rem 2rem;
+    }
+    .categoryservices {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5rem 2rem;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .catgory-container {
+      margin-left: 4rem;
+    }
+    .categoryservices {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5rem 0;
+      margin-top: 4rem;
+    }
+    .category__image {
+      width: 260px;
+    }
+    .category__info {
+      width: 160px;
+      top: 131px;
+      height: 70px;
+      padding: 1rem;
+    }
+    .catgory-container__text {
+      font-size: 16px;
+    }
+    .catgory-container__heading {
+      font-size: 36px;
+    }
+  }
+  
+  @media screen and (min-width: 1440px) {
+    .categoryservices {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
