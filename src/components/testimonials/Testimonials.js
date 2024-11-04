@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { testimonials } from "../../lov/data";
 import './Testimonials.css'
 

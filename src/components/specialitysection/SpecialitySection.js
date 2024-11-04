@@ -1,4 +1,3 @@
-import React from "react";
 import { specialities } from "../../lov/data";
 import './SpecialitySection.css'
 

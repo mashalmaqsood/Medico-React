@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { checkupData } from "../../lov/data";
 import Form from "../form/Form";
 import './CheckupPlans.css'

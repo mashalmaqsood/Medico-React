@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { benefits } from "../../lov/data";
 import Form from "../form/Form";
 import './BenefitsSection.css'
