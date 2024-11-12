@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import BenefitsSection from "./components/benefitsection/BenefitsSection";
 import CategorySection from "./components/categorysection/CategorySection";
 import CheckupPlans from "./components/checkup-plans/CheckupPlans";
@@ -9,10 +9,13 @@ import NavBar from "./components/navbar/NavBar";
 import SpecialitySection from "./components/specialitysection/SpecialitySection";
 import Testimonials from "./components/testimonials/Testimonials";
 import TopMenu from "./components/topmenu/TopMenu";
+import Form from "./components/form/Form";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function App() {
+  const [scroll, setScroll] = useState(false);
+  const [formOpen, setFormOpen] = useState(false);
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -20,24 +23,40 @@ function App() {
 
   const handleForm = (value) => {
     if(value){
-      document.body.classList.add("no-scroll");
+      setScroll(true);
     }else{
-      document.body.classList.remove("no-scroll");
+      setScroll(false);
     }
   }
 
+  const toggleForm = (formOpen) =>{
+    setFormOpen(formOpen);
+    handleForm(formOpen);
+  }
+
   return (
-    <div className="overflow-hidden">
+    <div className={`${scroll ? 'no-scroll' : 'scroll'}`}>
       <TopMenu />
-      <NavBar handleForm={handleForm}/>
+      <NavBar handleForm={handleForm} setFormOpen={setFormOpen}/>
       <Hero />
       <CategorySection />
       <SpecialitySection/>
-      <BenefitsSection handleForm={handleForm}/>
-      <CheckupPlans handleForm={handleForm}/>
+      <BenefitsSection handleForm={handleForm} setFormOpen={setFormOpen}/>
+      <CheckupPlans handleForm={handleForm} setFormOpen={setFormOpen}/>
       <Testimonials />
       <Contact />
-      <Footer handleForm={handleForm}/>
+      <Footer handleForm={handleForm} setFormOpen={setFormOpen}/>
+      {formOpen && (
+        <>
+          <div className="overlay" ></div>
+          <div className="form-container">
+            <button id="close-button" onClick={()=>toggleForm(false)}>
+              x
+            </button>
+            <Form setIsFormOpen={setFormOpen}/>
+          </div>
+        </>
+      )}
     </div>
   )
 }

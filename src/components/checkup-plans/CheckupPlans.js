@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { checkupData } from "../../lov/data";
-import Form from "../form/Form";
 import './CheckupPlans.css'
 
-const CheckupPlans = ({handleForm}) => {
+const CheckupPlans = ({handleForm, setFormOpen}) => {
   const [data, setData] = useState(checkupData[0]);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("womenHealth");
@@ -23,10 +22,7 @@ const CheckupPlans = ({handleForm}) => {
     setSelectedPlan("kidsVaccinnes");
   };
   
-  const toggleForm = (formOpen) =>{
-    setIsFormOpen(formOpen);
-    handleForm(formOpen);
-  }
+  
 
   return (
     <section id="checkup-plans" className="checkup-plans">
@@ -81,7 +77,7 @@ const CheckupPlans = ({handleForm}) => {
           </p>
           <ul className="checkup-plans__list">
             {Object.values(data.ul).map((listItem, index) => (
-              <li className="checkup-plans__listitem">
+              <li className="checkup-plans__listitem" key={index}>
                 <img
                   className="checkup-plans-list__icon"
                   src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852873/tick_qcykr9.svg"
@@ -91,7 +87,10 @@ const CheckupPlans = ({handleForm}) => {
               </li>
             ))}
           </ul>
-          <button className="btn benefits-section__button" onClick={()=>toggleForm(true)}>
+          <button className="btn benefits-section__button" onClick={() => { 
+              handleForm(true); 
+              setFormOpen(true)
+              }}>
             Take An Appointment
           </button>
         </div>
@@ -102,17 +101,7 @@ const CheckupPlans = ({handleForm}) => {
           />
         </div>
       </div>
-      {isFormOpen && (
-        <>
-          <div className="overlay" ></div>
-          <div className="form-container">
-            <button id="close-button" onClick={()=>toggleForm(false)}>
-              x
-            </button>
-            <Form setIsFormOpen={setIsFormOpen}/>
-          </div>
-        </>
-      )}
+      
     </section>
   );
 };

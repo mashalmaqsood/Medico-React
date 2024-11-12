@@ -3,14 +3,9 @@ import { benefits } from "../../lov/data";
 import Form from "../form/Form";
 import './BenefitsSection.css'
 
-const BenefitsSection = ({handleForm}) => {
+const BenefitsSection = ({handleForm, setFormOpen}) => {
 
   const [isFormOpen, setIsFormOpen] = useState(false);
-
-  const toggleForm = (formOpen) =>{
-    setIsFormOpen(formOpen);
-    handleForm(formOpen);
-  }
 
   return (
     <section id="about-us" className="benefits-section">
@@ -37,22 +32,15 @@ const BenefitsSection = ({handleForm}) => {
           large language ocean. A <br />
           small river named Duden flows by their place and supplies it.
         </p>
-        <button className="btn benefits-section__button" onClick={()=> toggleForm(true)} >
+        <button className="btn benefits-section__button" onClick={() => { 
+              handleForm(true); 
+              setFormOpen(true)
+              }} >
           Take An Appointment
         </button>
       </div>
 
-      {isFormOpen && (
-        <>
-          <div className="overlay"></div>
-          <div className="form-container">
-            <button id="close-button" onClick={()=> toggleForm(false)}>
-              x
-            </button>
-            <Form setIsFormOpen={setIsFormOpen}/>
-          </div>
-        </>
-      )}
+      
     </section>
   );
 };

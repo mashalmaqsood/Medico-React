@@ -15,7 +15,7 @@ const Form = ({setIsFormOpen }) => {
         <input type="tel" placeholder="Phone" className="input" required />
         <input type="email" placeholder="Email" className="input" required />
         <select className="input select-input" required>
-          <option value="" disabled selected>
+          <option value=" Select Appointment Type" disabled>
             Select Appointment Type
           </option>
           <option value="general-checkup">General Checkup</option>

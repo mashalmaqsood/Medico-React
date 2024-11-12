@@ -9,13 +9,10 @@ import {
   listItemsFour,
 } from "../../lov/data";
 
-const Footer = ({ handleForm }) => {
+const Footer = ({ handleForm, setFormOpen }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const toggleForm = (formOpen) => {
-    setIsFormOpen(formOpen);
-    handleForm(formOpen);
-  };
+
 
   return (
     <footer className="footer">
@@ -32,7 +29,10 @@ const Footer = ({ handleForm }) => {
             <span>Medico</span>
           </div>
           <div className="footer__buttton-container">
-            <button className="btn--footer" onClick={() => toggleForm(true)}>
+            <button className="btn--footer" onClick={() => { 
+              handleForm(true); 
+              setFormOpen(true)
+              }}>
               <img
                 src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852863/appointment_ss1ehz.svg"
                 width="12px"
@@ -105,17 +105,7 @@ const Footer = ({ handleForm }) => {
           ))}
         </div>
       </div>
-      {isFormOpen && (
-        <>
-          <div className="overlay"></div>
-          <div className="form-container">
-            <button id="close-button" onClick={() => toggleForm(false)}>
-              x
-            </button>
-            <Form setIsFormOpen={setIsFormOpen} />
-          </div>
-        </>
-      )}
+      
     </footer>
   );
 };

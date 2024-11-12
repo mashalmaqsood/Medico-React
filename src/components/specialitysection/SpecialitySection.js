@@ -19,7 +19,6 @@ const SpecialitySection = () => {
         data-aos="fade-right"
       >
         {specialities.map((speciality, index) => (
-          <>
             <div className="SpecialityServices__category" key={index}>
               <div className="grid SpecialityServices__category__container">
                 <img
@@ -42,7 +41,6 @@ const SpecialitySection = () => {
                 alt="right button"
               />
             </div>
-          </>
         ))}
       </div>
     </section>

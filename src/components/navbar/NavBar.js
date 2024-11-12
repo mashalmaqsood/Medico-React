@@ -1,8 +1,7 @@
 import { useState } from "react";
-import Form from "../form/Form";
 import './NavBar.css'
 
-const NavBar = (props) => {
+const NavBar = ({handleForm, setFormOpen}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
@@ -10,10 +9,7 @@ const NavBar = (props) => {
    setIsMenuOpen((prev) => !prev)
   }
 
-  const toggleForm = (formOpen) =>{
-    setIsFormOpen(formOpen);
-    props.handleForm(formOpen);
-  }
+  
 
   return (
     <header>
@@ -57,22 +53,15 @@ const NavBar = (props) => {
           <li className="nav__item">
             <a href="#contact-page">Contact</a>
           </li>
-          <button className="btn" id="appointment-btn" onClick={()=>toggleForm(true)}>
+          <button className="btn" id="appointment-btn" onClick={() => { 
+              handleForm(true); 
+              setFormOpen(true)
+              }}>
             Appointment
           </button>
         </ul>
       </nav>
-      {isFormOpen && (
-        <>
-          <div className="overlay" ></div>
-          <div className="form-container">
-            <button id="close-button" onClick={()=>toggleForm(false)}>
-              x
-            </button>
-            <Form setIsFormOpen={setIsFormOpen}/>
-          </div>
-        </>
-      )}
+      
     </header>
   );
 };
