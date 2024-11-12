@@ -1,5 +1,3 @@
-import { useState } from "react";
-import Form from "../form/Form";
 import { links } from "../../lov/data";
 import "./Footer.css";
 import {
@@ -10,10 +8,6 @@ import {
 } from "../../lov/data";
 
 const Footer = ({ handleForm, setFormOpen }) => {
-  const [isFormOpen, setIsFormOpen] = useState(false);
-
-
-
   return (
     <footer className="footer">
       <div className="container footer-sections">
@@ -29,10 +23,13 @@ const Footer = ({ handleForm, setFormOpen }) => {
             <span>Medico</span>
           </div>
           <div className="footer__buttton-container">
-            <button className="btn--footer" onClick={() => { 
-              handleForm(true); 
-              setFormOpen(true)
-              }}>
+            <button
+              className="btn--footer"
+              onClick={() => {
+                handleForm(true);
+                setFormOpen(true);
+              }}
+            >
               <img
                 src="https://res.cloudinary.com/dp7hicpjt/image/upload/v1729852863/appointment_ss1ehz.svg"
                 width="12px"
@@ -105,7 +102,6 @@ const Footer = ({ handleForm, setFormOpen }) => {
           ))}
         </div>
       </div>
-      
     </footer>
   );
 };

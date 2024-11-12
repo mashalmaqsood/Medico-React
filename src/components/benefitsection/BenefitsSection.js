@@ -1,12 +1,7 @@
-import { useState } from "react";
 import { benefits } from "../../lov/data";
-import Form from "../form/Form";
 import './BenefitsSection.css'
 
 const BenefitsSection = ({handleForm, setFormOpen}) => {
-
-  const [isFormOpen, setIsFormOpen] = useState(false);
-
   return (
     <section id="about-us" className="benefits-section">
       <div className="benefits-section__container">
@@ -39,8 +34,6 @@ const BenefitsSection = ({handleForm, setFormOpen}) => {
           Take An Appointment
         </button>
       </div>
-
-      
     </section>
   );
 };

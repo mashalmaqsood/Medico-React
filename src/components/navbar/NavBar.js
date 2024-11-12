@@ -3,13 +3,10 @@ import './NavBar.css'
 
 const NavBar = ({handleForm, setFormOpen}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isFormOpen, setIsFormOpen] = useState(false);
 
   const toggleMenu = () =>{
    setIsMenuOpen((prev) => !prev)
   }
-
-  
 
   return (
     <header>
@@ -61,7 +58,6 @@ const NavBar = ({handleForm, setFormOpen}) => {
           </button>
         </ul>
       </nav>
-      
     </header>
   );
 };

@@ -4,7 +4,6 @@ import './CheckupPlans.css'
 
 const CheckupPlans = ({handleForm, setFormOpen}) => {
   const [data, setData] = useState(checkupData[0]);
-  const [isFormOpen, setIsFormOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("womenHealth");
   
   const setWomenHealthData = () => {
@@ -21,8 +20,6 @@ const CheckupPlans = ({handleForm, setFormOpen}) => {
     setData(checkupData[2]);
     setSelectedPlan("kidsVaccinnes");
   };
-  
-  
 
   return (
     <section id="checkup-plans" className="checkup-plans">
@@ -101,7 +98,6 @@ const CheckupPlans = ({handleForm, setFormOpen}) => {
           />
         </div>
       </div>
-      
     </section>
   );
 };
