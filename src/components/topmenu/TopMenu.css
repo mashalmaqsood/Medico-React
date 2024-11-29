@@ -1,0 +1,75 @@
+.topmenu {
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+}
+
+.topmenu__info {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+}
+
+.topmenu__location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-white);
+}
+
+.topmenu__email {
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topmenu > img {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.topmenu__contact {
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.topmenu a {
+  color: var(--color-white);
+}
+
+@media screen and (min-width: 768px) {
+  .topmenu {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .topmenu img {
+    vertical-align: text-bottom;
+  }
+  .topmenu__info {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .topmenu {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .topmenu img {
+    vertical-align: text-bottom;
+  }
+  .topmenu__info {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}

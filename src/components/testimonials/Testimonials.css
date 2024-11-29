@@ -1,0 +1,100 @@
+.testimonials {
+  position: relative;
+  margin-top: 22rem;
+  gap: 5rem;
+  margin-left: 2rem;
+  padding: 2rem;
+}
+
+.testimonial__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.testimonial__image-container img {
+  height: auto;
+  width: 300px;
+  height: 300px;
+}
+
+.testimonial__container__text {
+  font-size: 18px;
+}
+
+.testimonials__heading {
+  font-weight: 700;
+  font-size: 31px;
+}
+
+.testimonials__heading h2 {
+  margin: 0;
+}
+
+.testimonials__patientinfo {
+  margin-top: 1rem;
+}
+
+.patientinfo__name {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.patientinfo__type {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.arrow-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: var(--color-white);
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 28%;
+}
+
+.arrow-btn.left-arrow {
+  left: 25px;
+}
+
+.arrow-btn.right-arrow {
+  right: 25px;
+}
+
+@media screen and (max-width: 320px) {
+  .testimonial__image-container img {
+    width: 230px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .testimonials {
+    grid-template-columns: 0.5fr 1.5fr 1.5fr 0.5fr;
+    margin-top: 0;
+    gap: 0;
+  }
+  .arrow-btn {
+    top: 50%;
+  }
+  .arrow-btn.right-arrow {
+    right: 40px;
+  }
+  .testimonial__container {
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .testimonial__container__text {
+    font-size: 21px;
+  }
+}
